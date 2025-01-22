@@ -16,6 +16,8 @@ Write code for the function.
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -106,8 +108,32 @@ public class CityFinder {
   }
 
   public static void main(String[] args) {
-    List<List<String>> content = fileReader("src/google/l4/file.txt");
-    System.out.println(findCity(content, "1.0.1.21") );
+//    List<List<String>> content = fileReader("src/google/l4/file.txt");
+//    System.out.println(findCity(content, "1.0.1.21") );
+
+
+    BigDecimal res;
+
+    // For user input
+    // Use Scanner or BufferedReader
+
+    // Object of String created
+    // Holds the value
+    String input1
+        = "31452678569.25";
+
+    // Convert the string input to BigDecimal
+    BigDecimal a
+        = new BigDecimal(input1);
+
+    // Scale for BigDecimal
+    int newScale = 4;
+
+    // Using setScale() method
+    res = a.setScale(newScale, RoundingMode.HALF_UP);
+
+    // Display the result in BigDecimal
+    System.out.println(res);
 
   }
 
