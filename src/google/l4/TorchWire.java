@@ -2,6 +2,10 @@ package google.l4;
 
 import java.util.*;
 
+/*
+Given a graph, some vertices are torch nodes and others are wire nodes. Torch nodes have a power value of 16, and wires have a power value of 0. If a torch node is directly connected to a wire node, the power of that wire becomes 15. Essentially, the power of wire nodes is calculated as max(0, 16 - distance from the closest torch node). Find the final power of all nodes in the graph and return the graph.
+ */
+
 public class TorchWire {
 
   static class Node {
